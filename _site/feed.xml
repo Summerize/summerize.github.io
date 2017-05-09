@@ -1,161 +1,80 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-04-25T12:02:48+02:00</updated><id>/</id><title>Summerize</title><subtitle>Garder le contact</subtitle><entry><title>Introduction</title><link href="/halve-theme/" rel="alternate" type="text/html" title="Introduction" /><published>2017-01-06T00:00:00+01:00</published><updated>2017-01-06T00:00:00+01:00</updated><id>/halve-theme</id><content type="html" xml:base="/halve-theme/">&lt;p&gt;&lt;a href=&quot;/images/halve-home-image.png&quot;&gt;&lt;img src=&quot;/images/halve-home-image.png&quot; alt=&quot;Home Page of Halve&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-05-09T12:01:03+02:00</updated><id>/</id><title>Summerize</title><subtitle>Garder le contact</subtitle><entry><title>Comment debugger une ‘callkit’ extension</title><link href="/callkit/" rel="alternate" type="text/html" title="Comment debugger une &#39;callkit&#39; extension" /><published>2017-01-06T00:00:00+01:00</published><updated>2017-01-06T00:00:00+01:00</updated><id>/callkit</id><content type="html" xml:base="/callkit/">&lt;p&gt;&lt;img src=&quot;/images/callkit.png&quot; alt=&quot;CallKit&quot; /&gt;&lt;/p&gt;
 
-&lt;center&gt;&lt;b&gt;Halve&lt;/b&gt; is a stylish, two-column jekyll theme.&lt;/center&gt;
+&lt;center&gt;Aujourd&#39;hui on vous explique comment nous avons procéder pour faire fonctionner un &lt;b&gt;identifieur d&#39;appel sur iOS via une callkit extension&lt;/b&gt;&lt;/center&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;This theme is Jekyll port of &lt;a href=&quot;http://claudot.com/&quot;&gt;claudot.com&lt;/a&gt; (by &lt;a href=&quot;https://github.com/srekoble&quot;&gt;Vangelis Tzortzis&lt;/a&gt;). I couldn’t stop myself to port this theme when I saw his site. And he kindly gave me permission to share this with you.&lt;/p&gt;
-
-&lt;iframe src=&quot;https://ghbtns.com/github-btn.html?user=TaylanTatli&amp;amp;repo=Halve&amp;amp;type=star&amp;amp;count=true&amp;amp;size=large&quot; frameborder=&quot;0&quot; scrolling=&quot;0&quot; width=&quot;160px&quot; height=&quot;30px&quot;&gt;&lt;/iframe&gt;
-
-&lt;h2 id=&quot;installation-and-quick-usage&quot;&gt;Installation and Quick Usage&lt;/h2&gt;
+&lt;h2 id=&quot;prrequis&quot;&gt;Prérequis&lt;/h2&gt;
 &lt;ul&gt;
-  &lt;li&gt;Fork the &lt;a href=&quot;https://github.com/TaylanTatli/Halve/fork&quot;&gt;Halve repo&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Edit &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; file.&lt;/li&gt;
-  &lt;li&gt;Edit &lt;code class=&quot;highlighter-rouge&quot;&gt;index.md&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;Edit &lt;code class=&quot;highlighter-rouge&quot;&gt;_data/projects.yaml&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Add a logo with a small one to &lt;code class=&quot;highlighter-rouge&quot;&gt;images&lt;/code&gt; folder. (eg. &lt;code class=&quot;highlighter-rouge&quot;&gt;logo.png&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;logo-small.png&lt;/code&gt;)&lt;/li&gt;
-  &lt;li&gt;Remove sample posts from &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; folder and add yours.&lt;/li&gt;
-  &lt;li&gt;Remove/Change sample images from &lt;code class=&quot;highlighter-rouge&quot;&gt;images&lt;/code&gt; folder.&lt;/li&gt;
-  &lt;li&gt;Change repo name to &lt;code class=&quot;highlighter-rouge&quot;&gt;YourUserName.github.io&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Connaître la notion d’extension&lt;/li&gt;
+  &lt;li&gt;&lt;a target=&quot;_blank&quot; rel=&quot;nofollow&quot; href=&quot;https://www.raywenderlich.com/150015/callkit-tutorial-ios&quot;&gt;Avoir déjà créé son extension CallKit&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;That’s all.&lt;/p&gt;
+&lt;h3 id=&quot;activer-votre-extension&quot;&gt;Activer votre extension&lt;/h3&gt;
+&lt;p&gt;Ce point peut paraître simple, mais beaucoup ignore qu’une extension à besoin d’être installée manuellement par l’utilisateur !
+Par consequent, allez dans les réglages de votre téléphone, puis entrée Téléphone, et enfin Bloquage d’appels et identification.
+Vous activer alors votre application !&lt;/p&gt;
 
-&lt;p&gt;If you want to make a &lt;strong&gt;Project Page&lt;/strong&gt;, you have to use &lt;code class=&quot;highlighter-rouge&quot;&gt;gh-pages&lt;/code&gt; branch. For &lt;strong&gt;Personal Page&lt;/strong&gt;; &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch. More info &lt;a href=&quot;https://help.github.com/articles/about-github-pages-and-jekyll/#jekylls-build-process&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/callkitsettings.png&quot; alt=&quot;CallKit&quot; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;preview&quot;&gt;Preview&lt;/h2&gt;
+&lt;h3 id=&quot;comprendre-le-format-dacceptation-des-numros-de-tlphone&quot;&gt;Comprendre le format d’acceptation des numéros de téléphone&lt;/h3&gt;
 
-&lt;figure class=&quot;third&quot;&gt;
-    
-    &lt;a href=&quot;/images/halve-home-image.png&quot;&gt;&lt;img src=&quot;/images/halve-home-image.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
-    
-    &lt;a href=&quot;/images/post-image-halve-1.png&quot;&gt;&lt;img src=&quot;/images/post-image-halve-1.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
-    
-    &lt;a href=&quot;/images/post-image-halve-2.png&quot;&gt;&lt;img src=&quot;/images/post-image-halve-2.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
-    
-    &lt;figcaption&gt;Screenshots of Halve Theme&lt;/figcaption&gt;
-&lt;/figure&gt;
+&lt;p&gt;Comme vous avez pu le voir, afin de spécifier les numéros que vous voulez identifier, il est nécessaire d’implémenter la méthode suivante dans votre extension :&lt;/p&gt;
 
-&lt;figure class=&quot;third&quot;&gt;
-    
-    &lt;a href=&quot;/images/post-image-halve-3.png&quot;&gt;&lt;img src=&quot;/images/post-image-halve-3.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
-    
-    &lt;a href=&quot;/images/post-image-halve-6.png&quot;&gt;&lt;img src=&quot;/images/post-image-halve-6.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
-    
-    &lt;a href=&quot;/images/post-image-halve-4.png&quot;&gt;&lt;img src=&quot;/images/post-image-halve-4.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
-    
-    &lt;figcaption&gt;Mobile view of Halve Theme&lt;/figcaption&gt;
-&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;private func addIdentificationPhoneNumbers&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;to context: CXCallDirectoryExtensionContext&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; throws &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
 
-&lt;p&gt;See a &lt;a href=&quot;http://taylantatli.github.io/Halve&quot;&gt;live version of Halve&lt;/a&gt; hosted on GitHub.&lt;/p&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h2 id=&quot;site-setup&quot;&gt;Site Setup&lt;/h2&gt;
-&lt;p&gt;A quick checklist of the files you’ll want to edit to get up and running.&lt;/p&gt;
+&lt;p&gt;La documentation vous demande alors de fournir une liste de tuple contenant :&lt;br /&gt;
+- Le numéro à identifier&lt;br /&gt;
+- Le label associé qui sera affiché&lt;br /&gt;
+Attention, comme indiqué, cette liste doit-être triée par numéro de téléphone, et ceux-ci on un format bien spécifique :&lt;/p&gt;
 
-&lt;h3 id=&quot;site-wide-configuration&quot;&gt;Site Wide Configuration&lt;/h3&gt;
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; is your friend. Open it up and personalize it. Most variables are self explanatory but here’s an explanation of each if needed:&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;public typealias CXCallDirectoryPhoneNumber &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; Int64&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h4 id=&quot;title&quot;&gt;title&lt;/h4&gt;
+&lt;p&gt;Pour ma part, j’ai choisit de mettre ces numéros sous le format suivant :
+number.countryCode + number.nationnalNumber
+par exemple, en france ou le code pays est 33, on peut avoir un numéro sous la forme&lt;/p&gt;
 
-&lt;p&gt;The title of your site… shocker!&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;33610101010&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Example &lt;code class=&quot;highlighter-rouge&quot;&gt;title: My Awesome Site&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Une fois sous le bon format, n’oubliez pas de &lt;b&gt;trier votre liste avant de la soumettre !&lt;/b&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;description&quot;&gt;description&lt;/h4&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;var sortedContacts &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[(&lt;/span&gt;String, CXCallDirectoryPhoneNumber&lt;span class=&quot;o&quot;&gt;)]()&lt;/span&gt;
+....
 
-&lt;p&gt;The description to use for meta tags and homepage.&lt;/p&gt;
+sortedContacts.sort&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;by: &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$0&lt;/span&gt;.1 &amp;gt; &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;.1 &lt;span class=&quot;o&quot;&gt;})&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;s, p&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;sortedContacts &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    context.addIdentificationEntry&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;withNextSequentialPhoneNumber: p, label: s&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h4 id=&quot;url&quot;&gt;url&lt;/h4&gt;
+&lt;h3 id=&quot;et-maintenant-on-teste-&quot;&gt;Et maintenant, on teste !&lt;/h3&gt;
 
-&lt;p&gt;Used to generate absolute urls in &lt;code class=&quot;highlighter-rouge&quot;&gt;sitemap.xml&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;feed.xml&lt;/code&gt;, and for generating canonical URLs in &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;head&amp;gt;&lt;/code&gt;. When developing locally either comment this out or use something like &lt;code class=&quot;highlighter-rouge&quot;&gt;http://localhost:4000&lt;/code&gt; so all assets load properly. &lt;em&gt;Don’t include a trailing &lt;code class=&quot;highlighter-rouge&quot;&gt;/&lt;/code&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Vous trouverez tout un tas d’articles expliquant comment lancer une extension en debug, avec la notion d “attach to process”.
+Le problème de notre extension est qu’elle ne possède pas d’interface graphique, par conséquent, impossible de lancer ce process en debug.
+Pour les curieux, c’est par &lt;a target=&quot;_blank&quot; rel=&quot;nofollow&quot; href=&quot;http://easynativeextensions.com/how-to-debug-your-ios-extension/&quot;&gt;ici&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Examples:&lt;/p&gt;
+&lt;h3 id=&quot;notre-solution-la-console-&quot;&gt;Notre solution, la Console !&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/images/callkitConsole.png&quot; alt=&quot;CallKit&quot; /&gt;&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;s&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;http://taylantatli.me/Halve&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;http://localhost:4000&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;//cooldude.github.io&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;L’application console d’Apple a été remise au goût du jour depuis mac OS Sierra, et le moins que l’on puisse dire c’est qu’il y a eu du changement.
+Pour la première fois depuis bien longtemps, l’application devient utilisable et c’est grâce à elle que nous avons pu débloquer nos problème.
+Afin de vous aider, vous pouvez utiliser la barre de filtre, afin de vous concentrer sur des recherches précises :&lt;br /&gt;
+- Le nom de votre application (pour nous Summerize) &lt;br /&gt;
+- Callkit &lt;br /&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;logo&quot;&gt;logo&lt;/h4&gt;
-&lt;p&gt;Your site’s logo. It will be shown on homepage. Also used for twitter meta tags.&lt;/p&gt;
+&lt;p&gt;Dans les deux cas, des informations bien différentes vont ressortir, mais elles peuvent toutes être pertinentes.&lt;/p&gt;
 
-&lt;h4 id=&quot;background&quot;&gt;background&lt;/h4&gt;
-&lt;p&gt;Here we will set images for left block. Example:&lt;/p&gt;
+&lt;h3 id=&quot;quelques-tips-utiles&quot;&gt;Quelques tips utiles&lt;/h3&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;background:
-  homepage: images/home.png
-  post-list: images/unsplash-image-10.jpg
-  default-post: images/unsplash-gallery-image-3.jpg
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;Dans les réglages de votre téléphone, vous pouvez désactiver toutes les applications pouvant faire de l’identification d’appel, afin d’être la seule application à le faire, et de consacrer vos logs à votre application.&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;Si vous echangez des datas entre votre application et votre extension, vérifiez que vous utilisez les bons méchanismes, notamment le répertoire dédié. Une erreur de type “sandbox violation” peut-être vue dans les logs si une erreur se passe à ce niveau.&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;Si vous voyez les logs suivants, vous êtes sur la bonne piste !&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;dl&gt;
-  &lt;dt&gt;homepage&lt;/dt&gt;
-  &lt;dd&gt;Is for homepage background image.&lt;/dd&gt;
-  &lt;dt&gt;post-list&lt;/dt&gt;
-  &lt;dd&gt;Is for posts list page background image.&lt;/dd&gt;
-  &lt;dt&gt;default-post&lt;/dt&gt;
-  &lt;dd&gt;Is for posts&#39; default background image. It will be shown for every posts that don&#39;t specify any image from post&#39;s YAML front matter.&lt;/dd&gt;
-&lt;/dl&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;default	11:56:37.939605 +0200	callservicesd	Received -[CXCallSource registerWithConfiguration:] with configuration: &amp;lt;private&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;hr /&gt;
+&lt;p&gt;&lt;img src=&quot;/images/callkitsuccess.png&quot; alt=&quot;CallKit&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;projects-overlay&quot;&gt;Projects Overlay&lt;/h3&gt;
-
-&lt;p&gt;To set what image links appear in the overlay menu edit &lt;code class=&quot;highlighter-rouge&quot;&gt;_data/projects.yaml&lt;/code&gt;. Use the following format to set the URL, title, image and project status for as many links as you’d like. If you set &lt;code class=&quot;highlighter-rouge&quot;&gt;completed&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt; like &lt;code class=&quot;highlighter-rouge&quot;&gt;completed: false&lt;/code&gt;, it won’t be clickable until you set it true like &lt;code class=&quot;highlighter-rouge&quot;&gt;completed: true&lt;/code&gt;&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Moon Jekyll Theme&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;http://taylantatli.me/Moon&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;https://cloud.githubusercontent.com/assets/754514/14509720/61c61058-01d6-11e6-93ab-0918515ecd56.png&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;completed&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;true&lt;/span&gt;
-
-&lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Ramme Jekyll Theme&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;http://taylantatli.me/Ramme&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;https://raw.githubusercontent.com/TaylanTatli/Ramme/master/assets/img/screenshot-post.png&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;completed&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;true&lt;/span&gt;
-
-&lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Daisy Pelican Theme&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;http://taylantatli.me/Daisy-Pelican-Theme/&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;https://raw.githubusercontent.com/TaylanTatli/Daisy-Pelican-Theme/master/Preview-1.png&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;completed&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;true&lt;/span&gt;
-
-&lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Block Icon Theme&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;https://github.com/TaylanTatli/Block-Icon-Theme&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;https://raw.githubusercontent.com/TaylanTatli/Block-Icon-Theme/master/Preview.png&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;completed&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;false&lt;/span&gt;
-
-&lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Start Page&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;http://taylantatli.me/StartPage/&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;https://raw.githubusercontent.com/TaylanTatli/StartPage/master/preview.png&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;completed&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;false&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;layouts-and-content&quot;&gt;Layouts and Content&lt;/h2&gt;
-
-&lt;p&gt;Halve Theme use &lt;a href=&quot;https://github.com/penibelst/jekyll-compress-html&quot;&gt;Jekyll Compress&lt;/a&gt; to compress html output. But it can cause errors if you use “linenos” (line numbers). I suggest don’t use line numbers for codes, because it won’t look good with this theme, also i didn’t give a proper style for them. If you insist to use line numbers, just remove &lt;code class=&quot;highlighter-rouge&quot;&gt;layout: compress&lt;/code&gt; string from layouts. It will disable compressing.&lt;/p&gt;
-
-&lt;h3 id=&quot;images-for-posts&quot;&gt;Images for Posts&lt;/h3&gt;
-
-&lt;p&gt;You can set left block image per post. Just add &lt;code class=&quot;highlighter-rouge&quot;&gt;image: some link&lt;/code&gt; to your post’s front matter. If you don’t set this, default post image will be used from &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;image: /assets/img/some-image.png
-or
-image: http://example.com/some-image.png
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;This also will be used for twitter card:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/post-image-halve-5.png&quot; alt=&quot;Halve Twitter Card&quot; /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;questions&quot;&gt;Questions?&lt;/h2&gt;
-
-&lt;p&gt;Found a bug or aren’t quite sure how something works? By all means &lt;a href=&quot;https://github.com/TaylanTatli/Halve/issues/new&quot;&gt;file a GitHub Issue&lt;/a&gt;. And if you make something cool with this theme feel free to let me know.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
-
-&lt;p&gt;This theme is free and open source software, distributed under the MIT License. So feel free to use this Jekyll theme on your site without linking back to me or including a disclaimer.&lt;/p&gt;</content><category term="blog" /><category term="techno" /><category term="homard" /><summary>Bienvenue sur notre blog Summerize.</summary></entry></feed>
+&lt;h3 id=&quot;auteur&quot;&gt;Auteur&lt;/h3&gt;
+&lt;p&gt;Paul-Anatole CLAUDOT&lt;/p&gt;</content><category term="iOS" /><category term="Apple" /><category term="Extension" /><category term="CallKit" /><category term="Debug Extension" /><category term="CXCallDirectoryPhoneNumber" /><category term="Phone number formatter" /><summary>iOS CallKit Extension</summary></entry></feed>
