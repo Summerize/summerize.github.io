@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-05-09T12:10:26+02:00</updated><id>/</id><title>Summerize</title><subtitle>Garder le contact</subtitle><entry><title>Comment debugger une ‘callkit’ extension</title><link href="/callkit/" rel="alternate" type="text/html" title="Comment debugger une &#39;callkit&#39; extension" /><published>2017-01-06T00:00:00+01:00</published><updated>2017-01-06T00:00:00+01:00</updated><id>/callkit</id><content type="html" xml:base="/callkit/">&lt;p&gt;&lt;img src=&quot;/images/callkit.png&quot; alt=&quot;CallKit&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-05-10T18:37:02+02:00</updated><id>/</id><title>Summerize</title><subtitle>Garder le contact</subtitle><entry><title>Comment debugger une ‘callkit’ extension</title><link href="/callkit/" rel="alternate" type="text/html" title="Comment debugger une &#39;callkit&#39; extension" /><published>2017-01-06T00:00:00+01:00</published><updated>2017-01-06T00:00:00+01:00</updated><id>/callkit</id><content type="html" xml:base="/callkit/">&lt;p&gt;&lt;img src=&quot;/images/callkit.png&quot; alt=&quot;CallKit&quot; /&gt;&lt;/p&gt;
 
 &lt;center&gt;Aujourd&#39;hui on vous explique comment nous avons procéder pour faire fonctionner un &lt;b&gt;identifieur d&#39;appel sur iOS via une callkit extension&lt;/b&gt;&lt;/center&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -63,6 +63,23 @@ Afin de vous aider, vous pouvez utiliser la barre de filtre, afin de vous concen
 - Callkit &lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;Dans les deux cas, des informations bien différentes vont ressortir, mais elles peuvent toutes être pertinentes.&lt;/p&gt;
+
+&lt;p&gt;Voici un exemple vous permettant de déterminer un comportement erroné :
+&lt;img src=&quot;/images/callkitConsoleError.png&quot; alt=&quot;CallKit&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;utilisation-des-mthodes-de-refresh&quot;&gt;Utilisation des méthodes de refresh&lt;/h3&gt;
+&lt;p&gt;Un point important d’une callKit Extension est que l’on peut forcer l’appel aux methodes de délégation depuis l’application.
+Nous avons donc choisit d’executer dans notre application, un comportement identique à l’extension afin de pouvoir logguer les résultats et constater d’éventuelles erreurs.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;let &lt;/span&gt;callKitExt &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; CXCallDirectoryManager.sharedInstance
+&lt;span class=&quot;c&quot;&gt;#if DEBUG&lt;/span&gt;
+    self.simulateExtensionBehaviour&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#endif&lt;/span&gt;
+callKitExt.reloadExtension&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;withIdentifier: &lt;span class=&quot;s2&quot;&gt;&quot;your bundle extension identifier&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;error&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in
+    if &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;let &lt;/span&gt;e &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; error &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        NSLog&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;e.localizedDescription&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h3 id=&quot;quelques-tips-utiles&quot;&gt;Quelques tips utiles&lt;/h3&gt;
 
