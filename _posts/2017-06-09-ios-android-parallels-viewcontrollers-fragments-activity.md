@@ -1,12 +1,17 @@
 ---
 layout: post
-title:  "Android expliquer par un dev iOS"
+title:  "UIViewControler = Activity et/ou Fragment"
 date:   2017-06-08
-excerpt: "Android expliquer par un dev iOS"
-published: false
+excerpt: "UIViewControler = Activity et/ou Fragment"
+published: true
 tag:
 - iOS
 - Android
+- iOS <3 Android
+- Android <3 iOS
+- UIViewControler
+- Fragment
+- Activity
 ---
 
 ## Prérequis
@@ -17,7 +22,7 @@ tag:
 * Pour travailler efficacement avec les autres plateformes (vous avez surement des soucis commun, pourquoi ne pas les solutionner ensemble ... mais pour ça il faut se comprendre)
 * Android est une grosse plateforme (80% du marché) et elle est devenu mature
 
-### UIViewControler, Activity, Fragments
+## UIViewControler, Activity, Fragments
 Sur iOS, Android, le design pattern le plus commun est le **MVC** (Model View Controller).
 + **Model** : les données de base que vous gérées.
 + **View** : une représentation visuelle de l'écran.
@@ -76,8 +81,3 @@ Fausse question et faux problème, il faut utiliser les 2, en connaissant les qu
 - Un fragment n'a pas besoin d'être déclaré dans le manifest (youpi)
 - ViewPager : fragments !
 - Pour une mutualisation smartphone tablettes : fragments !
-
-
-
-#### Source de lectures
-https://developer.android.com/guide/components/fragments.html

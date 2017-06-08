@@ -7,6 +7,8 @@ published: false
 tag:
 - iOS
 - Android
+- iOS <3 Android
+- Android <3 iOS
 ---
 
 ## Prérequis
