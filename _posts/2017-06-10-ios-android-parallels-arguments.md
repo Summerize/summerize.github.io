@@ -34,6 +34,7 @@ startActivity(intent);
 ```
 
 On moment du `onCreate` on pourra récupérer **la valeur**.
+
 ```java
 @Override
 protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +57,7 @@ startActivity(intent);
 ```
 
 On moment du `onCreate` on pourra récupérer ce **pointeur**.
+
 ```java
 @Override
 protected void onCreate(Bundle savedInstanceState) {
@@ -109,6 +111,7 @@ On fait ce que l'on veut car on utilise les références des `viewControllers` e
 
 Il y a tout de même quelques conseils :
 1. Utiliser les [DESIGNATED_INITIALIZER](https://developer.apple.com/library/content/documentation/General/Conceptual/CocoaEncyclopedia/Initialization/Initialization.html) si vous ne connaissez pas demandez vous ce que va appeler `new` dans cet example
+
 ```objc
 MonObjet obj = [MonObjet new];
 ```
