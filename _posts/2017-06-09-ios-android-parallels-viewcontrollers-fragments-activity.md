@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "UIViewControler = Activity et/ou Fragment"
+title:  "UIViewController = Activity et/ou Fragment"
 date:   2017-06-08
-excerpt: "UIViewControler = Activity et/ou Fragment"
+excerpt: "UIViewController = Activity et/ou Fragment"
 published: true
 tag:
 - iOS
@@ -15,33 +15,33 @@ tag:
 ---
 
 ## Prérequis
-* Connaitre iOS et avoir envie de comprendre Android
+* Connaitre iOS et vouloir comprendre Android
 
 ## Pourquoi comprendre Android
 * Vous ne ferez pas que de l'iOS toute votre vie, donc restez curieux
-* Pour travailler efficacement avec les autres plateformes (vous avez surement des soucis commun, pourquoi ne pas les solutionner ensemble ... mais pour ça il faut se comprendre)
-* Android est une grosse plateforme (80% du marché) et elle est devenu mature
+* Pour travailler efficacement avec les autres plateformes (vous avez surement des soucis communs, pourquoi ne pas les solutionner ensemble ... mais pour ça il faut se comprendre)
+* Android est une plateforme importante (80% du marché mobile) et elle est devenue mature
 
-## UIViewControler, Activity, Fragments
+## UIViewController, Activity, Fragment
 Sur iOS, Android, le design pattern le plus commun est le **MVC** (Model View Controller).
 + **Model** : les données de base que vous gérées.
 + **View** : une représentation visuelle de l'écran.
-+ **Controller** : un object qui va gérer les événements qui se produisent sur la vue et répercuter cela sur le modèle.
++ **Controller** : un object qui va gérer les événements qui se produisent sur la vue et les répercuter sur le modèle.
 
 |      |     iOS    |  Android |
 | :-------------: |: -------------: | :---------: |
 | **View**     |     UIView     |      View |
-| **Controller**        |        UIViewControler       |      Activity, Fragment |
+| **Controller**        |        UIViewController       |      Activity, Fragment |
 | **Model**     |    x        |      x |
 
-### iOS : UIViewControler
-Depuis la sortie du l'environnement de développement, (iPhone OS 1, Mars 2008), les UIViewControllers sont disponible.
+### iOS : UIViewController
+Depuis la sortie du l'environnement de développement, (iPhone OS 1, Mars 2008), les UIViewControllers sont disponibles.
 En 2010, sort l'iPad 1.
-Les applications iPhone et iPad doivent (logiquement) partager une grosse partie des concepts graphiques. Pour ce faire, nous pouvons gérer de la composition, c'est à dire réutiliser plusieurs UIViewControllers d'iPhone pour proposer un écran d'iPad.
+Les applications iPhone et iPad doivent (logiquement) partager une grosse partie des concepts graphiques. Pour ce faire, nous pouvons gérer de la composition, c'est à dire réutiliser plusieurs UIViewControllers d'iPhone pour composer un écran d'iPad.
 
 ```swift
-let parentViewController = UIViewControler()
-let childController = UIViewControler()
+let parentViewController = UIViewController()
+let childController = UIViewController()
 parentViewController.addChildViewController(childController)
 parentViewController.view.addSubview(childController.view)
 childController.didMoveToParentViewController(self)
@@ -58,7 +58,7 @@ UIViewControler *childController = new childController();
 **Ce qu'il faut retenir, c'est que c'est au développeur de se débrouiller pour construire et réutiliser ses briques.**
 
 #### Complexité ?
-Avec la complexité grandissante des applications il est devenu important de pouvoir découper son écran en plusieurs view/controlleur plus petit.
+Avec la complexité grandissante des applications, il est devenu important de pouvoir découper son écran en plusieurs views/controlleurs plus petits.
 Apple nous laisse la liberté de faire ce que l'on veut.
 
 
@@ -75,9 +75,9 @@ Sur Android c'est différent, Google a fait le choix à notre place et impose 2 
 L'idée étant de proposer un choix pour mutualiser son code et réutiliser un maximum de chose entre les interfaces.
 
 Alors faut-il utiliser les fragments ou les activités ?
-Fausse question et faux problème, il faut utiliser les 2, en connaissant les quelques limitations :
+Question piège, il faut utiliser les deux, en connaissant les limitations de chacun :
 - Un fragment doit être dans un activité
 - Un fragment ne peut pas présenter une activité (pas de startActivity)
-- Un fragment n'a pas besoin d'être déclaré dans le manifest (youpi)
+- Un fragment n'a pas besoin d'être déclaré dans le manifest (!!)
 - ViewPager : fragments !
 - Pour une mutualisation smartphone tablettes : fragments !

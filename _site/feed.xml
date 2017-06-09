@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-06-08T17:36:02+02:00</updated><id>/</id><title>Summerize</title><subtitle>Garder le contact</subtitle><entry><title>Android, le passage d’arguments</title><link href="/ios-android-parallels-arguments/" rel="alternate" type="text/html" title="Android, le passage d&#39;arguments" /><published>2017-06-08T00:00:00+02:00</published><updated>2017-06-08T00:00:00+02:00</updated><id>/ios-android-parallels-arguments</id><content type="html" xml:base="/ios-android-parallels-arguments/">&lt;h2 id=&quot;prrequis&quot;&gt;Prérequis&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-06-09T10:55:59+02:00</updated><id>/</id><title>Summerize</title><subtitle>Garder le contact</subtitle><entry><title>Android, le passage d’arguments</title><link href="/ios-android-parallels-arguments/" rel="alternate" type="text/html" title="Android, le passage d&#39;arguments" /><published>2017-06-08T00:00:00+02:00</published><updated>2017-06-08T00:00:00+02:00</updated><id>/ios-android-parallels-arguments</id><content type="html" xml:base="/ios-android-parallels-arguments/">&lt;h2 id=&quot;prrequis&quot;&gt;Prérequis&lt;/h2&gt;
 &lt;ul&gt;
-  &lt;li&gt;Connaitre iOS et avoir envie de comprendre Android&lt;/li&gt;
+  &lt;li&gt;Connaitre iOS et vouloir comprendre Android&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;pourquoi-comprendre-android&quot;&gt;Pourquoi comprendre Android&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;Vous ne ferez pas que de l’iOS toute votre vie, donc restez curieux&lt;/li&gt;
   &lt;li&gt;Pour travailler efficacement avec les autres plateformes (vous avez surement des soucis commun, pourquoi ne pas les solutionner ensemble … mais pour ça il faut se comprendre)&lt;/li&gt;
-  &lt;li&gt;Android est une grosse plateforme (80% du marché) et elle est devenu mature&lt;/li&gt;
+  &lt;li&gt;Android est une plateforme importante (80% du marché) et elle est devenue mature&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;ios-beaucoup-de-libert&quot;&gt;iOS, beaucoup de liberté&lt;/h2&gt;
@@ -23,7 +23,7 @@ On configure un &lt;code class=&quot;highlighter-rouge&quot;&gt;Intent&lt;/code&
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;On moment du &lt;code class=&quot;highlighter-rouge&quot;&gt;onCreate&lt;/code&gt; on pourra récupérer &lt;strong&gt;la valeur&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Au moment du &lt;code class=&quot;highlighter-rouge&quot;&gt;onCreate&lt;/code&gt; on pourra récupérer &lt;strong&gt;la valeur&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;onCreate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Bundle&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;savedInstanceState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
@@ -43,7 +43,7 @@ On configure un &lt;code class=&quot;highlighter-rouge&quot;&gt;Intent&lt;/code&
   &lt;tbody&gt;
     &lt;tr&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;C’est facile&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;Pour des données simple&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;Pour des données simples&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
@@ -57,7 +57,7 @@ On configure un &lt;code class=&quot;highlighter-rouge&quot;&gt;Intent&lt;/code&
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;On moment du &lt;code class=&quot;highlighter-rouge&quot;&gt;onCreate&lt;/code&gt; on pourra récupérer ce &lt;strong&gt;pointeur&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Au moment du &lt;code class=&quot;highlighter-rouge&quot;&gt;onCreate&lt;/code&gt; on pourra récupérer ce &lt;strong&gt;pointeur&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;onCreate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Bundle&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;savedInstanceState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
@@ -77,14 +77,14 @@ On configure un &lt;code class=&quot;highlighter-rouge&quot;&gt;Intent&lt;/code&
   &lt;tbody&gt;
     &lt;tr&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;Pas besoin de serialiser l’objet&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;Attention à la gestion mémoire et ne pas oublié libérer ces pointeurs&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;Attention à la gestion mémoire et ne pas oublié libérer les pointeurs&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
 
 &lt;h3 id=&quot;fragment-setarguments&quot;&gt;Fragment, setArguments&lt;/h3&gt;
 
-&lt;p&gt;Le fragment expose publiquement des méthodes l’instancier. On lui passe des paramètres et le système fait le reste.&lt;/p&gt;
+&lt;p&gt;Le fragment expose publiquement des méthodes pour l’instancier. On lui passe des paramètres et le système fait le reste.&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DetailsFragment&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;newInstance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;DetailsFragment&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DetailsFragment&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
@@ -105,7 +105,7 @@ On configure un &lt;code class=&quot;highlighter-rouge&quot;&gt;Intent&lt;/code&
   &lt;/thead&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Le système est capable décider de reconstruire le fragment, il passera par le constructeur vide mais les arguments seront encore là, ouf !&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Le système est capable de décider la reconstruction du fragment, il passera par le constructeur vide mais les arguments seront encore là, ouf !&lt;/td&gt;
       &lt;td style=&quot;text-align: right&quot;&gt;x&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
@@ -134,7 +134,7 @@ On configure un &lt;code class=&quot;highlighter-rouge&quot;&gt;Intent&lt;/code&
   &lt;/thead&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;C’est une bonne idée de pouvoir rafraichir un fragment&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;C’est une bonne idée de pouvoir rafraîchir un fragment&lt;/td&gt;
       &lt;td style=&quot;text-align: right&quot;&gt;Perte des données si le système décide de reconstruire le fragment&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
@@ -144,32 +144,32 @@ On configure un &lt;code class=&quot;highlighter-rouge&quot;&gt;Intent&lt;/code&
 &lt;p&gt;On fait ce que l’on veut car on utilise les références des &lt;code class=&quot;highlighter-rouge&quot;&gt;viewControllers&lt;/code&gt; et le système ne désalloue pas les instances si facilement.&lt;/p&gt;
 
 &lt;p&gt;Il y a tout de même quelques conseils :
-1. Utiliser les &lt;a href=&quot;https://developer.apple.com/library/content/documentation/General/Conceptual/CocoaEncyclopedia/Initialization/Initialization.html&quot;&gt;DESIGNATED_INITIALIZER&lt;/a&gt; si vous ne connaissez pas demandez vous ce que va appeler &lt;code class=&quot;highlighter-rouge&quot;&gt;new&lt;/code&gt; dans cet example&lt;/p&gt;
+1. Utiliser les &lt;a href=&quot;https://developer.apple.com/library/content/documentation/General/Conceptual/CocoaEncyclopedia/Initialization/Initialization.html&quot;&gt;DESIGNATED_INITIALIZER&lt;/a&gt; si vous ne connaissez pas, demandez vous ce que va appeler &lt;code class=&quot;highlighter-rouge&quot;&gt;new&lt;/code&gt; dans cet example&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;MonObjet&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MonObjet&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;MonObjet&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MonObjet&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;ou en Swift … vous le sentirez passer car le compilateur vérifie :)&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;Faites vos propres DESIGNATED_INITIALIZER pour expliquer les paramètres obligatoires ou non.&lt;/li&gt;
-&lt;/ol&gt;</content><category term="iOS" /><category term="Android" /><category term="iOS &lt;3 Android" /><category term="Android &lt;3 iOS" /><summary>Android, le passage d&#39;arguments</summary></entry><entry><title>UIViewControler = Activity et/ou Fragment</title><link href="/ios-android-parallels-viewcontrollers-fragments-activity/" rel="alternate" type="text/html" title="UIViewControler = Activity et/ou Fragment" /><published>2017-06-08T00:00:00+02:00</published><updated>2017-06-08T00:00:00+02:00</updated><id>/ios-android-parallels-viewcontrollers-fragments-activity</id><content type="html" xml:base="/ios-android-parallels-viewcontrollers-fragments-activity/">&lt;h2 id=&quot;prrequis&quot;&gt;Prérequis&lt;/h2&gt;
+&lt;/ol&gt;</content><category term="iOS" /><category term="Android" /><category term="iOS &lt;3 Android" /><category term="Android &lt;3 iOS" /><summary>Android, le passage d&#39;arguments</summary></entry><entry><title>UIViewController = Activity et/ou Fragment</title><link href="/ios-android-parallels-viewcontrollers-fragments-activity/" rel="alternate" type="text/html" title="UIViewController = Activity et/ou Fragment" /><published>2017-06-08T00:00:00+02:00</published><updated>2017-06-08T00:00:00+02:00</updated><id>/ios-android-parallels-viewcontrollers-fragments-activity</id><content type="html" xml:base="/ios-android-parallels-viewcontrollers-fragments-activity/">&lt;h2 id=&quot;prrequis&quot;&gt;Prérequis&lt;/h2&gt;
 &lt;ul&gt;
-  &lt;li&gt;Connaitre iOS et avoir envie de comprendre Android&lt;/li&gt;
+  &lt;li&gt;Connaitre iOS et vouloir comprendre Android&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;pourquoi-comprendre-android&quot;&gt;Pourquoi comprendre Android&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;Vous ne ferez pas que de l’iOS toute votre vie, donc restez curieux&lt;/li&gt;
-  &lt;li&gt;Pour travailler efficacement avec les autres plateformes (vous avez surement des soucis commun, pourquoi ne pas les solutionner ensemble … mais pour ça il faut se comprendre)&lt;/li&gt;
-  &lt;li&gt;Android est une grosse plateforme (80% du marché) et elle est devenu mature&lt;/li&gt;
+  &lt;li&gt;Pour travailler efficacement avec les autres plateformes (vous avez surement des soucis communs, pourquoi ne pas les solutionner ensemble … mais pour ça il faut se comprendre)&lt;/li&gt;
+  &lt;li&gt;Android est une plateforme importante (80% du marché mobile) et elle est devenue mature&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;uiviewcontroler-activity-fragments&quot;&gt;UIViewControler, Activity, Fragments&lt;/h2&gt;
+&lt;h2 id=&quot;uiviewcontroller-activity-fragment&quot;&gt;UIViewController, Activity, Fragment&lt;/h2&gt;
 &lt;p&gt;Sur iOS, Android, le design pattern le plus commun est le &lt;strong&gt;MVC&lt;/strong&gt; (Model View Controller).
 + &lt;strong&gt;Model&lt;/strong&gt; : les données de base que vous gérées.
 + &lt;strong&gt;View&lt;/strong&gt; : une représentation visuelle de l’écran.
-+ &lt;strong&gt;Controller&lt;/strong&gt; : un object qui va gérer les événements qui se produisent sur la vue et répercuter cela sur le modèle.&lt;/p&gt;
++ &lt;strong&gt;Controller&lt;/strong&gt; : un object qui va gérer les événements qui se produisent sur la vue et les répercuter sur le modèle.&lt;/p&gt;
 
 &lt;table&gt;
   &lt;thead&gt;
@@ -187,7 +187,7 @@ On configure un &lt;code class=&quot;highlighter-rouge&quot;&gt;Intent&lt;/code&
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;Controller&lt;/strong&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;UIViewControler&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;UIViewController&lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;Activity, Fragment&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
@@ -198,13 +198,13 @@ On configure un &lt;code class=&quot;highlighter-rouge&quot;&gt;Intent&lt;/code&
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;h3 id=&quot;ios--uiviewcontroler&quot;&gt;iOS : UIViewControler&lt;/h3&gt;
-&lt;p&gt;Depuis la sortie du l’environnement de développement, (iPhone OS 1, Mars 2008), les UIViewControllers sont disponible.
+&lt;h3 id=&quot;ios--uiviewcontroller&quot;&gt;iOS : UIViewController&lt;/h3&gt;
+&lt;p&gt;Depuis la sortie du l’environnement de développement, (iPhone OS 1, Mars 2008), les UIViewControllers sont disponibles.
 En 2010, sort l’iPad 1.
-Les applications iPhone et iPad doivent (logiquement) partager une grosse partie des concepts graphiques. Pour ce faire, nous pouvons gérer de la composition, c’est à dire réutiliser plusieurs UIViewControllers d’iPhone pour proposer un écran d’iPad.&lt;/p&gt;
+Les applications iPhone et iPad doivent (logiquement) partager une grosse partie des concepts graphiques. Pour ce faire, nous pouvons gérer de la composition, c’est à dire réutiliser plusieurs UIViewControllers d’iPhone pour composer un écran d’iPad.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;parentViewController&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIViewControler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;childController&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIViewControler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;parentViewController&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIViewController&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;childController&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIViewController&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;parentViewController&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;addChildViewController&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;childController&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;parentViewController&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;addSubview&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;childController&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;childController&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;didMoveToParentViewController&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
@@ -222,7 +222,7 @@ Les applications iPhone et iPad doivent (logiquement) partager une grosse partie
 &lt;p&gt;&lt;strong&gt;Ce qu’il faut retenir, c’est que c’est au développeur de se débrouiller pour construire et réutiliser ses briques.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;complexit-&quot;&gt;Complexité ?&lt;/h4&gt;
-&lt;p&gt;Avec la complexité grandissante des applications il est devenu important de pouvoir découper son écran en plusieurs view/controlleur plus petit.
+&lt;p&gt;Avec la complexité grandissante des applications, il est devenu important de pouvoir découper son écran en plusieurs views/controlleurs plus petits.
 Apple nous laisse la liberté de faire ce que l’on veut.&lt;/p&gt;
 
 &lt;h4 id=&quot;android--activity-et-fragments&quot;&gt;Android : Activity et fragments&lt;/h4&gt;
@@ -243,12 +243,12 @@ Apple nous laisse la liberté de faire ce que l’on veut.&lt;/p&gt;
 &lt;p&gt;L’idée étant de proposer un choix pour mutualiser son code et réutiliser un maximum de chose entre les interfaces.&lt;/p&gt;
 
 &lt;p&gt;Alors faut-il utiliser les fragments ou les activités ?
-Fausse question et faux problème, il faut utiliser les 2, en connaissant les quelques limitations :
+Question piège, il faut utiliser les deux, en connaissant les limitations de chacun :
 - Un fragment doit être dans un activité
 - Un fragment ne peut pas présenter une activité (pas de startActivity)
-- Un fragment n’a pas besoin d’être déclaré dans le manifest (youpi)
+- Un fragment n’a pas besoin d’être déclaré dans le manifest (!!)
 - ViewPager : fragments !
-- Pour une mutualisation smartphone tablettes : fragments !&lt;/p&gt;</content><category term="iOS" /><category term="Android" /><category term="iOS &lt;3 Android" /><category term="Android &lt;3 iOS" /><category term="UIViewControler" /><category term="Fragment" /><category term="Activity" /><summary>UIViewControler = Activity et/ou Fragment</summary></entry><entry><title>Comment debugger une ‘callkit’ extension</title><link href="/callkit/" rel="alternate" type="text/html" title="Comment debugger une &#39;callkit&#39; extension" /><published>2017-01-06T00:00:00+01:00</published><updated>2017-01-06T00:00:00+01:00</updated><id>/callkit</id><content type="html" xml:base="/callkit/">&lt;p&gt;&lt;img src=&quot;/images/callkit.png&quot; alt=&quot;CallKit&quot; /&gt;&lt;/p&gt;
+- Pour une mutualisation smartphone tablettes : fragments !&lt;/p&gt;</content><category term="iOS" /><category term="Android" /><category term="iOS &lt;3 Android" /><category term="Android &lt;3 iOS" /><category term="UIViewControler" /><category term="Fragment" /><category term="Activity" /><summary>UIViewController = Activity et/ou Fragment</summary></entry><entry><title>Comment debugger une ‘callkit’ extension</title><link href="/callkit/" rel="alternate" type="text/html" title="Comment debugger une &#39;callkit&#39; extension" /><published>2017-01-06T00:00:00+01:00</published><updated>2017-01-06T00:00:00+01:00</updated><id>/callkit</id><content type="html" xml:base="/callkit/">&lt;p&gt;&lt;img src=&quot;/images/callkit.png&quot; alt=&quot;CallKit&quot; /&gt;&lt;/p&gt;
 
 &lt;center&gt;Aujourd&#39;hui on vous explique comment nous avons procéder pour faire fonctionner un &lt;b&gt;identifieur d&#39;appel sur iOS via une callkit extension&lt;/b&gt;&lt;/center&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
